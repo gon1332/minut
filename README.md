@@ -68,6 +68,7 @@ test result: FAILED. 1 passed; 1 failed
 ```
 
 2. Define test functions (e.g. `this`) for your functionality with `TEST(test_function_name)` and assert with `ASSERT_EQ(golden, result)`:
+*Note: If you need a custom comparator you can use `ASSERT_EQ_CMP(cmp, golden, result)`*
 ```c
 TEST(this)
 {

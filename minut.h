@@ -25,6 +25,17 @@
         return true;                                                  \
     } while (0)
 
+#define ASSERT_EQ_CMP(cmp, golden, result)                            \
+    do {                                                              \
+        if (!((cmp)((golden), (result)))) {                                \
+            printf("test %s ... FAILED: ", __func__);                 \
+            printf("assertion failed: \""#golden" == "#result"\"\n"); \
+            return false;                                             \
+        }                                                             \
+        printf("test %s ... ok\n", __func__);                         \
+        return true;                                                  \
+    } while (0)
+
 #define MINUT_BEG                  \
     void test(void) {              \
         unsigned failed = 0;       \
